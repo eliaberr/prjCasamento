@@ -1,0 +1,15 @@
+.nav a{
+    color: #F5E8D0;
+}
+
+.nav a:hover{
+    color: #F5E8D0;
+}
+
+.nav a:active{
+    color: #F5E8D0;
+}
+
+.nav a::selection{
+    color: #F5E8D0;
+}
