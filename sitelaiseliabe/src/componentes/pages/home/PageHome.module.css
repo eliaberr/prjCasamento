@@ -1,15 +1,8 @@
-.nav a{
-    color: #F5E8D0;
-}
-
-.nav a:hover{
-    color: #F5E8D0;
-}
-
-.nav a:active{
-    color: #F5E8D0;
-}
-
-.nav a::selection{
-    color: #F5E8D0;
+.imgInicio{
+    background-image: url(../../../img/imgInicio.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
 }
