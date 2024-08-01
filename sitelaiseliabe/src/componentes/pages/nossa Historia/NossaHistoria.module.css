@@ -1,18 +1,26 @@
 img{
     width: 15rem;
+    margin: 5px;
     
 }
 
 .nossaHistoria{
-    background-color: #F5E8D0;   
+    background-color: #F5E8D0;
+    padding: 0rem 4rem;
+
 }
 
 .boxNossaHistoria{
-    width: 30rem;
-    font-size: 0.93rem;
+   width: 25rem;
+    font-size: 1.1rem;
 }
 
 .txtNossaHistoria{
     font-family: 'Lora', serif;
     color: #8B4513;
+}
+
+.box{
+    border: solid 1px;
+    border-radius: 4rem;
 }
