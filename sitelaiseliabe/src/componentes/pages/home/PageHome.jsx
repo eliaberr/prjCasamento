@@ -1,6 +1,6 @@
 import Nav from '../../layout/nav/nav'
 import style from '../home/PageHome.module.css'
-import logoLaisEliabe from '../../../img/imgLaisEliabe.png'
+
 
 
 function PageHome(){
