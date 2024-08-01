@@ -1,0 +1,18 @@
+img{
+    width: 15rem;
+    
+}
+
+.nossaHistoria{
+    background-color: #F5E8D0;   
+}
+
+.boxNossaHistoria{
+    width: 30rem;
+    font-size: 0.93rem;
+}
+
+.txtNossaHistoria{
+    font-family: 'Lora', serif;
+    color: #8B4513;
+}
