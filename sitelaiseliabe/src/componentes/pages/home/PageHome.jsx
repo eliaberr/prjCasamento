@@ -4,6 +4,7 @@ import NossaHistoria from '../nossa Historia/NossaHistoria'
 import imgHistoria1 from '../../../img/imgHistoria1.jpg'
 import imgHistoria2 from '../../../img/imgHistoria2.jpg'
 import imgHistoria3 from '../../../img/imgHistoria3.jpg'
+import Contagem from '../contagem/Contagem'
 
 
 
@@ -16,6 +17,7 @@ function PageHome(){
            <main>
             <section className={style.imgInicio}></section>
             <section className={`${style.sectionNossaHistoria} text-center `}>
+                <Contagem/>
                 <NossaHistoria
                     txtNossaHistoria="Nossa Hitória"
                     imgDireita={imgHistoria1}
@@ -36,6 +38,7 @@ function PageHome(){
                               Eliabe e Laís decidiram dar o próximo passo. Assim, começaram
                               a orar a Deus, pedindo direção para esse novo momento."
                 />
+                
             </section>
            </main>
         </div>
