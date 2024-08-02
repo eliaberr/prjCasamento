@@ -12,11 +12,11 @@ import Contagem from '../contagem/Contagem'
 
 function PageHome(){
     return(
-        <div>
-           <footer><Nav/></footer>
+        <div id='home'>
+           <footer className='fixed-top opacity-75' ><Nav/></footer>
            <main>
-            <section className={style.imgInicio}></section>
-            <section className={`${style.sectionNossaHistoria} text-center `}>
+            <section className={style.imgInicio} ></section>
+            <section id='nossaHistoria' className={`${style.sectionNossaHistoria} text-center `}>
                 <Contagem/>
                 <NossaHistoria
                     txtNossaHistoria="Nossa Hitória"

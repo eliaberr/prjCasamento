@@ -5,10 +5,10 @@ function Nav(){
         <div>
             <ul class={`nav bg-dark ${style.nav}`}>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nossa História</a>
+                    <a class="nav-link" href="#nossaHistoria">Nossa História</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Informações Casamento</a>

@@ -1,4 +1,4 @@
-input{
+.numerosContagem{
     background-color: rgb(255, 255, 255);
     font-size: 2rem;
     border: none;
@@ -9,7 +9,7 @@ input{
     text-align: center;
 }
 
-h1{
+.txtContagem{
     font-family: 'Lora', serif;
     color: #8B4513;
 }

@@ -5,8 +5,8 @@ import style from '../nossa Historia/NossaHistoria.module.css'
 
 function NossaHistoria({txtNossaHistoria, mensagem, imgDireita, imgEsquerda}) {
     return(
-        <div className={` ${style.nossaHistoria}`}>
-            {txtNossaHistoria ? <h1 className={`pt-5 ${style.txtNossaHistoria}`}>{txtNossaHistoria}</h1>
+        <div className={` pt-5 ${style.nossaHistoria}`}>
+            {txtNossaHistoria ? <h1 className={`py-5 ${style.txtNossaHistoria}`}>{txtNossaHistoria}</h1>
             :<></> }
             
                 <div className={` mt-5 d-flex justify-content-between p-5 container gap-5 shadow mt-3 rounded-5`}>
