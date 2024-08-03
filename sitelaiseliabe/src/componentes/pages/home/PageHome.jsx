@@ -4,7 +4,7 @@ import NossaHistoria from '../nossa Historia/NossaHistoria'
 import imgHistoria1 from '../../../img/imgHistoria1.jpg'
 import imgHistoria2 from '../../../img/imgHistoria2.jpg'
 import imgHistoria3 from '../../../img/imgHistoria3.jpg'
-import Contagem from '../contagem/Contagem'
+import Contagem from '../../contagem/Contagem'
 
 
 
@@ -18,6 +18,7 @@ function PageHome(){
             <section className={style.imgInicio} ></section>
             <section id='nossaHistoria' className={`${style.sectionNossaHistoria} text-center `}>
                 <Contagem/>
+                <h1 className={`py-5 ${style.txtNossaHistoria}`}>Nossa História</h1>
                 <NossaHistoria
                     txtNossaHistoria="Nossa Hitória"
                     imgDireita={imgHistoria1}
@@ -37,6 +38,11 @@ function PageHome(){
                               de amor entre eles. Depois de um ano e seis meses de namoro,
                               Eliabe e Laís decidiram dar o próximo passo. Assim, começaram
                               a orar a Deus, pedindo direção para esse novo momento."
+                />
+
+                <NossaHistoria
+                    imgDireita={imgHistoria3}
+                    mensagem="É com grande alegria, Laís e Eliabe anunciam o tão aguardado momento de dizer 'sim' perante o altar. Rodeados por familiares e amigos, eles estão prontos para dar o próximo passo em sua jornada de amor, iniciando um novo capítulo em suas vidas."
                 />
                 
             </section>

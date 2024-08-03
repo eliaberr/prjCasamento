@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import style from '../contagem/Contagem.module.css'
+import style from './Contagem.module.css'
 
 function Contagem (){
 
@@ -15,7 +15,6 @@ function Contagem (){
 
             const intervalo = date - dateNow
         
-
             const segundos = 1000
             const minutos = segundos * 60
             const hora = minutos * 60
@@ -34,6 +33,7 @@ function Contagem (){
 
         setInterval (countdown, 1000)
     }
+    
     contagemRegressiva()
     
     return (
