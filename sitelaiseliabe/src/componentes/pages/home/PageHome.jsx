@@ -7,6 +7,7 @@ import imgHistoria3 from '../../../img/imgHistoria3.jpg'
 import imgHistoria4 from '../../../img/imgHistoria4.png'
 
 import Contagem from '../../contagem/Contagem'
+import InfoCasamento from '../Info Casamento/InfoCasamento'
 
 
 
@@ -18,7 +19,7 @@ function PageHome(){
            <footer className='fixed-top opacity-75' ><Nav/></footer>
            <main>
             <section className={style.imgInicio} ></section>
-            <section id='nossaHistoria' className={`${style.sectionNossaHistoria} text-center `}>
+            <section id='nossaHistoria' className={`${style.sectionNossaHistoria} text-center pb-5`}>
                 <Contagem/>
                 <h1 className={`py-5 ${style.txtNossaHistoria}`}>Nossa História</h1>
                 <NossaHistoria
@@ -66,7 +67,7 @@ function PageHome(){
                 />
             </section>
             <section>
-                
+                <InfoCasamento/>
             </section>
            </main>
         </div>
