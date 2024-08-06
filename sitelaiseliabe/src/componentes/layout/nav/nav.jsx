@@ -11,7 +11,7 @@ function Nav(){
                     <a class="nav-link" href="#nossaHistoria">Nossa História</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Informações Casamento</a>
+                    <a class="nav-link" href="#infoCasamento">Informações Casamento</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Confirmar Presença</a>

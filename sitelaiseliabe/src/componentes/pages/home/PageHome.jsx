@@ -17,7 +17,7 @@ function PageHome(){
     return(
         <div id='home'>
            <footer className='fixed-top opacity-75' ><Nav/></footer>
-           <main>
+           <main className='d-grid'>
             <section className={style.imgInicio} ></section>
             <section id='nossaHistoria' className={`${style.sectionNossaHistoria} text-center pb-5`}>
                 <Contagem/>
@@ -66,7 +66,7 @@ function PageHome(){
                                 de Deus em nossas vidas."
                 />
             </section>
-            <section>
+            <section className={`pb-5 ${style.sectionInfoCasamento}`} i id='infoCasamento'>
                 <InfoCasamento/>
             </section>
            </main>
