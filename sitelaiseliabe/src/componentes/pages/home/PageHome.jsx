@@ -18,7 +18,7 @@ function PageHome(){
         <div id='home'>
            <footer className='fixed-top opacity-75' ><Nav/></footer>
            <main className='d-grid'>
-            <section className={style.imgInicio} ></section>
+            <section className={`container col-md-12 ${style.imgInicio}`}></section>
             <section id='nossaHistoria' className={`${style.sectionNossaHistoria} text-center pb-5`}>
                 <Contagem/>
                 <h1 className={`py-5 ${style.txtNossaHistoria}`}>Nossa História</h1>

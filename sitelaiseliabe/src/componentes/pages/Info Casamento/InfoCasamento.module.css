@@ -11,6 +11,10 @@
     
 }
 
+span:hover{
+  color: white;
+}
+
 .btnLocalizar{
     background-color: #F5E8D0;
     color: #8B4513;
@@ -22,6 +26,7 @@
     background-color: #4d2906 ;
     color: #F5E8D0;
     transform: scale(1.03);
-    
 }
+
+
 
