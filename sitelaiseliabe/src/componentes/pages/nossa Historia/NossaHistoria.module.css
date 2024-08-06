@@ -1,9 +1,3 @@
-img{
-    width: 15rem;
-    margin: 5px;
-    
-}
-
 .nossaHistoria{
     background-color: #F5E8D0;
     padding: 0rem 4rem;
@@ -11,14 +5,7 @@ img{
 }
 
 .boxNossaHistoria{
-   width: 25rem;
    font-size: 1.1rem;
    text-align: justify;
-}
-
-
-
-.box{
-    border: solid 1px;
-    border-radius: 4rem;
+   
 }

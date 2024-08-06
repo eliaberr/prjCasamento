@@ -3,7 +3,7 @@ import style from '../nav/Nav.module.css'
 function Nav(){
     return(
         <div>
-            <ul class={`nav bg-dark ${style.nav}`}>
+            <ul class={` d-none d-sm-flex nav bg-dark ${style.nav}`}>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#home">Home</a>
                 </li>

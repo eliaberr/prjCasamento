@@ -25,7 +25,7 @@ function PageHome(){
                 <NossaHistoria
                     txtNossaHistoria="Nossa Hitória"
                     imgDireita={imgHistoria1}
-                    mensagem="  
+                    mensagemEsquerda="  
                                 🤵🏻‍♂️: Tudo começou quando meu amigo Ederson me chamou
                                 para quebrar um galho. Logo, ele me apresentou à Laís,
                                 e eu me apaixonei. Depois de um tempo,
@@ -37,7 +37,7 @@ function PageHome(){
                 />
                 <NossaHistoria
                     imgEsquerda={imgHistoria2}
-                    mensagem="  👰🏻‍♀️: Depois do primeiro beijo, começamos a nos conhecer melhor, a conversar
+                    mensagemDireita="  👰🏻‍♀️: Depois do primeiro beijo, começamos a nos conhecer melhor, a conversar
                                 todos os dias e a nos encontrar para caminhar sempre com nossos amigos.
                                 Isso durou 6 meses. Depois disso, começamos a orar, pedindo direção a Deus sobre
                                 o nosso namoro. Ficamos 2 meses orando. Certa vez, falei com meu pai sobre
@@ -48,7 +48,7 @@ function PageHome(){
 
                 <NossaHistoria
                     imgDireita={imgHistoria3}
-                    mensagem="  🤵🏻‍♂️: Estava com medo não, é apenas respeito! Logo depois de começarmos a namorar,
+                    mensagemEsquerda="  🤵🏻‍♂️: Estava com medo não, é apenas respeito! Logo depois de começarmos a namorar,
                                 comecei a conhecer a Laís melhor e a me apaixonar por ela. Ali, decidi
                                 que a Laís seria a mulher da minha vida e comecei a pensar na possibilidade
                                 de casar, mas ainda era muito cedo kkkk. Depois de 1 ano e 6 meses de namoro,
@@ -59,7 +59,7 @@ function PageHome(){
 
                 <NossaHistoria
                     imgEsquerda={imgHistoria4}
-                    mensagem="  👰🏻‍♀️🤵🏻‍♂️: E hoje estamos aqui anunciando o nosso casamento. Não foi fácil chegarmos
+                    mensagemDireita="  👰🏻‍♀️🤵🏻‍♂️: E hoje estamos aqui anunciando o nosso casamento. Não foi fácil chegarmos
                                 até aqui, pois enfrentamos muitas dificuldades e pensamos até em desistir. Mas
                                 maior é Aquele que está conosco. Nessa nossa nova jornada, estamos rodeados de
                                 nossos familiares e amigos para o nosso tão sonhado 'sim' no altar, uma promessa

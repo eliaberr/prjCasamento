@@ -9,7 +9,7 @@ function InfoCasamento() {
     const waze = "https://waze.com/ul/h6gy1ygwcq"
 
     return (
-        <div className={`col-10 offset-1 rounded-5 shadow text-center p-3 ${style.boxLocalizacao}`}>
+        <div className={`col-8 offset-2 rounded-5 shadow text-center p-3 ${style.boxLocalizacao}`}>
             <span className="fs-1"><FaLocationDot/></span>
            
             <h1>Bellas festas</h1>
