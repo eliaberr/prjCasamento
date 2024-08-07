@@ -1,11 +1,26 @@
 .nossaHistoria{
     background-color: #F5E8D0;
-    padding: 0rem 4rem;
-
+    padding: 3rem ;
 }
 
 .boxNossaHistoria{
    font-size: 1.1rem;
    text-align: justify;
    
+   
 }
+
+@media (max-width: 500px) {
+    .boxNossaHistoria{
+        font-size: 1rem;   
+     }
+
+     .msgEsquerda{
+        padding-bottom: 2rem;
+     }
+
+     .msgDireita{
+        padding-top: 2rem;
+     }
+     
+  }

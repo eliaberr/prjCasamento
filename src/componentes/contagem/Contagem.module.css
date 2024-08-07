@@ -13,3 +13,8 @@
     color: #8B4513;
 }
 
+@media (max-width: 500px) {
+    label{
+        font-size: 12px;
+    }
+  }

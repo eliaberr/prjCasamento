@@ -9,20 +9,20 @@ function InfoCasamento() {
     const waze = "https://waze.com/ul/h6gy1ygwcq"
 
     return (
-        <div className={`col-8 offset-2 rounded-5 shadow text-center p-3 ${style.boxLocalizacao}`}>
+        <div className={`col-sm-8 offset-sm-2 rounded-5 shadow text-center p-3 ${style.boxLocalizacao}`}>
             <span className="fs-1"><FaLocationDot/></span>
            
             <h1>Bellas festas</h1>
-            <div className="col-4 offset-4">
+            <div className="col-sm-4 offset-sm-4">
                 <p>O casamento acontecerá às 17h na Estr. da Servidão, 73 - Ana Maria, Sorocaba - SP, 18052-887.</p>
             </div>
             <div>
                 <a href={maps} target="_blank" rel="noreferrer">
-                    <button className={`col-2 me-3  ${style.btnLocalizar}`}><span className="align-content-center text-dark"><FaLocationDot/></span> Abrir no Maps</button>
+                    <button className={`col-sm-2 me-3  ${style.btnLocalizar}`}><span className="align-content-center text-dark"><FaLocationDot/></span> Abrir no Maps</button>
                 </a>
 
                 <a href={waze} target="_blank" rel="noreferrer">
-                    <button className={`col-2 me-3 align-content-center ${style.btnLocalizar}`}><span className="align-content-center text-dark"><FaWaze/></span> Abrir no Waze</button>
+                    <button className={`col-sm-2 me-3 align-content-center ${style.btnLocalizar}`}><span className="align-content-center text-dark"><FaWaze/></span> Abrir no Waze</button>
                 </a>
             </div>
         </div>

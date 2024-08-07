@@ -37,28 +37,28 @@ function Contagem (){
     contagemRegressiva()
     
     return (
-        <div className="col-10 offset-1 col-sm-6 ">
-            <h1 className={`pt-5 ${style.txtContagem}`}>
+        <div className="col-12  col-sm-6 offset-sm-3 ">
+            <h1 className={`col-10 offset-1 pt-5 ${style.txtContagem}`}>
                 O Grande Dia Está Chegando
             </h1>
             <div className="d-flex justify-content-center mt-4">
-                <div className='text-center col-3 col-sm-2'>
-                    <input type="text" disabled value={dia} className={`col-12 ${style.numerosContagem}`}/>
+                <div className='text-center col-2 col-sm-2 '>
+                    <input type="text" disabled value={dia} className={`col-10 col-sm-5 ${style.numerosContagem}`}/>
                     <br/>
                     <label htmlFor="" >Dias</label>
                 </div>
-                <div className='text-center col-3 col-sm-2 '>
-                    <input type="text" disabled value={hora} className={`col-12 ${style.numerosContagem}`}/>
+                <div className='text-center col-2 col-sm-2 '>
+                    <input type="text" disabled value={hora} className={`col-10 col-sm-5  ${style.numerosContagem}`}/>
                     <br/>
                     <label htmlFor="" >Horas</label>
                 </div>
-                <div className='text-center col-3 col-sm-2'>
-                    <input type="text" disabled value={minutos} className={`col-12 ${style.numerosContagem}`}/>
+                <div className='text-center col-2 col-sm-2'>
+                    <input type="text" disabled value={minutos} className={`col-10 col-sm-5  ${style.numerosContagem}`}/>
                     <br/>
                     <label htmlFor="" >Minutos</label>
                 </div>
-                <div className='text-center col-3 col-sm-2 '>
-                    <input type="text" disabled value={segundos} className={`col-12 ${style.numerosContagem}`}/>
+                <div className='text-center col-2 col-sm-2 '>
+                    <input type="text" disabled value={segundos} className={`col-10 col-sm-5  ${style.numerosContagem}`}/>
                     <br/>
                     <label htmlFor="" >Segundos</label>
                 </div>
