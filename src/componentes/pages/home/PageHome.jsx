@@ -8,6 +8,7 @@ import imgHistoria4 from '../../../img/imgHistoria4.png'
 
 import Contagem from '../../contagem/Contagem'
 import InfoCasamento from '../Info Casamento/InfoCasamento'
+import imgHome from '../../../img/imgInicio.png'
 
 
 
@@ -18,7 +19,9 @@ function PageHome(){
         <div id='home'>
            <footer className='fixed-top opacity-75' ><Nav/></footer>
            <main className='d-grid'>
-            <section className={`container col-md-12 ${style.imgInicio}`}></section>
+            <section className={`col-md-12`}>
+                <img src={imgHome} alt="imgHome" className={`col-12  ${style.imgInicio}`}/>
+            </section>
             <section id='nossaHistoria' className={`${style.sectionNossaHistoria} text-center pb-5`}>
                 <Contagem/>
                 <h1 className={`py-5 ${style.txtNossaHistoria}`}>Nossa História</h1>
