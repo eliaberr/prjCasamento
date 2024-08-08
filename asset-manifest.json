@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/prjCasamento/static/css/main.33be8ea7.css",
-    "main.js": "/prjCasamento/static/js/main.282206fb.js",
+    "main.css": "/prjCasamento/static/css/main.5129ac42.css",
+    "main.js": "/prjCasamento/static/js/main.3b5968ab.js",
     "static/js/453.e5cb4381.chunk.js": "/prjCasamento/static/js/453.e5cb4381.chunk.js",
     "static/media/imgInicio.png": "/prjCasamento/static/media/imgInicio.1d16e368581f15488c57.png",
     "static/media/imgHistoria4.png": "/prjCasamento/static/media/imgHistoria4.07928e5f2e01411c7a01.png",
@@ -10,12 +10,12 @@
     "static/media/imgHistoria1.jpg": "/prjCasamento/static/media/imgHistoria1.45fbd90e956c4db85f00.jpg",
     "static/media/logo.svg": "/prjCasamento/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/prjCasamento/index.html",
-    "main.33be8ea7.css.map": "/prjCasamento/static/css/main.33be8ea7.css.map",
-    "main.282206fb.js.map": "/prjCasamento/static/js/main.282206fb.js.map",
+    "main.5129ac42.css.map": "/prjCasamento/static/css/main.5129ac42.css.map",
+    "main.3b5968ab.js.map": "/prjCasamento/static/js/main.3b5968ab.js.map",
     "453.e5cb4381.chunk.js.map": "/prjCasamento/static/js/453.e5cb4381.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.33be8ea7.css",
-    "static/js/main.282206fb.js"
+    "static/css/main.5129ac42.css",
+    "static/js/main.3b5968ab.js"
   ]
 }
