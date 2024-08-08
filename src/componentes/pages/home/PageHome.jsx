@@ -9,6 +9,7 @@ import imgHistoria4 from '../../../img/imgHistoria4.png'
 import Contagem from '../../contagem/Contagem'
 import InfoCasamento from '../Info Casamento/InfoCasamento'
 import imgHome from '../../../img/imgInicio.png'
+import ConfirmarPresenca from '../Confirmar Presença/ConfirmarPresenca'
 
 
 
@@ -71,6 +72,9 @@ function PageHome(){
             </section>
             <section className={`pb-5 ${style.sectionInfoCasamento}`} i id='infoCasamento'>
                 <InfoCasamento/>
+            </section>
+            <section className={`pb-5 ${style.confirmarPresenca}`} i id='confirmarPresenca'>
+                <ConfirmarPresenca/>
             </section>
            </main>
         </div>
