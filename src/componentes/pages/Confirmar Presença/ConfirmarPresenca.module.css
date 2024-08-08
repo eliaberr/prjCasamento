@@ -1,3 +1,16 @@
 .ConfirmarPresenca{
     background-color: #F5E8D0; 
 }
+
+.btnConfirmar{
+    background-color: #F5E8D0;
+    color: #8B4513;
+    border: solid 1px;
+    border-radius: 4px;   
+}
+
+.btnConfirmar:hover{
+    background-color: #4d2906 ;
+    color: #F5E8D0;
+    transform: scale(1.03);
+}
