@@ -15,7 +15,7 @@ function ConfirmarPresenca() {
     
         window.open(whatsappUrl, '_blank');
       }
-
+      /* 5454554${valor}*/
       console.log(name,convidado)
    return(
     <div className={`col-sm-8 offset-sm-2 rounded-5 shadow text-center p-3 ${style.ConfirmarPresenca}`}>
