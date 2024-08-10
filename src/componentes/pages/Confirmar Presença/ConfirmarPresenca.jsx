@@ -1,5 +1,6 @@
 import { useState } from "react";
 import style  from "../Confirmar Presença/ConfirmarPresenca.module.css";
+import { MdVerified } from "react-icons/md";
 
 function ConfirmarPresenca() {
     const [name , setName] = useState('')
@@ -19,24 +20,26 @@ function ConfirmarPresenca() {
       console.log(name,convidado)
    return(
     <div className={`col-sm-8 offset-sm-2 rounded-5 shadow text-center p-3 ${style.ConfirmarPresenca}`}>
-        <h1>Confirme sua Presença</h1>
-        <div class="col-md-4 offset-md-4">
-            <label for="nomeUser" class="form-label">Digite Seu Nome</label>
-            <input type="text" class="form-control" id="nomeUser" placeholder="Digite Seu Nome Aqui" required onChange={(e) => setName(e.target.value)}/>
-        </div>
-        <div class="col-md-4 offset-md-4 mt-3">
-            <label htmlFor="">Você é Convidado da:</label>
-            <select class="form-select" aria-label="Default select example" onChange={(e) => setConvidado(e.target.value)}>
-                <option selected>Selecione Uma Opção</option>
-                <option value="da Noiva">Laís - Noiva</option>
-                <option value="do Noivo">Eliabe - Noivo</option>
-            </select>
-        </div>
+        <span className="fs-1"><MdVerified/></span>
+        <h1 className={style.txtConfirmar}>Confirme sua Presença</h1>
+        <form onSubmit={handleSubmit}>
+            <div className="col-md-4 offset-md-4">
+                <label htmlFor="nomeUser" className="form-label">Digite Seu Nome</label>
+                <input type="text" className="form-control" id="nomeUser" placeholder="Digite Seu Nome Aqui" required onChange={(e) => setName(e.target.value)}/>
+            </div>
+            <div className="col-md-4 offset-md-4 mt-3">
+                <label >Você é Convidado:</label>
+                <select className="form-select" aria-label="Default select example" onChange={(e) => setConvidado(e.target.value)} required>
+                    <option >Selecione Uma Opção</option>
+                    <option value="da Noiva">Laís - Noiva</option>
+                    <option value="do Noivo">Eliabe - Noivo</option>
+                </select>
+            </div>
 
-        <button className={`col-md-3 mt-4 ${style.btnConfirmar}`} onClick={handleSubmit}>
-            Confirmar Presença
-        </button>
-
+            <button className={`col-md-3 mt-4 ${style.btnConfirmar}`}>
+                Confirmar Presença
+            </button>
+        </form>
     </div>
    )
 }

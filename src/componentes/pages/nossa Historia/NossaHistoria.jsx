@@ -13,8 +13,7 @@ function NossaHistoria({mensagemDireita, mensagemEsquerda,  imgDireita, imgEsque
                         {mensagemEsquerda}
                     </p> : <></> }
                     
-                    
-                    {imgDireita ? <div className='col-sm-4 col-12 '>
+                    {imgDireita ? <div className='col-sm-4 col-12'>
                         <img src={imgDireita} alt="imagem1" className='rounded-3 shadow w-100 offset-sm-9'/>
                     </div> : <></> }
                     

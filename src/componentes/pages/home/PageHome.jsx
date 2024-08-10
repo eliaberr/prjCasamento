@@ -18,7 +18,7 @@ import ConfirmarPresenca from '../Confirmar Presença/ConfirmarPresenca'
 function PageHome(){
     return(
         <div id='home'>
-           <footer className='fixed-top opacity-75' ><Nav/></footer>
+           <header className='fixed-top opacity-75' ><Nav/></header>
            <main className='d-grid'>
             <section className={`col-md-12`}>
                 <img src={imgHome} alt="imgHome" className={`col-12  ${style.imgInicio}`}/>
@@ -45,8 +45,8 @@ function PageHome(){
                                 todos os dias e a nos encontrar para caminhar sempre com nossos amigos.
                                 Isso durou 6 meses. Depois disso, começamos a orar, pedindo direção a Deus sobre
                                 o nosso namoro. Ficamos 2 meses orando. Certa vez, falei com meu pai sobre
-                                namorar, e ele não gostou muito da ideia. Pedi ao Eliabe que conversasse com
-                                ele naquele mesmo dia, que foi 4 de julho. Forçou ele a vir, pois o bonitão
+                                namorar, e ele não gostou muito da ideia, mas acabou cedendo. Pedi ao Eliabe que conversasse com
+                                ele, foi no dia 4 de julho 2021 que ele veio aqui em casa. Forçei ele a vir, pois o bonitão
                                 estava com medo."
                 />
 
@@ -58,7 +58,7 @@ function PageHome(){
                                 de casar, mas ainda era muito cedo kkkk. Depois de 1 ano e 6 meses de namoro,
                                 fui conversar com o pai e a mãe dela sobre o casamento. Fui com muito respeito
                                 kkkk. Chegando lá, falei com eles, e eles aprovaram. No dia 14 de abril de
-                                2023, pedi-a em casamento, bem no dia do seu aniversário kkkk."
+                                2023, pedi-a em casamento, bem no dia do seu aniversário."
                 />
 
                 <NossaHistoria
@@ -66,14 +66,15 @@ function PageHome(){
                     mensagemDireita="  👰🏻‍♀️🤵🏻‍♂️: E hoje estamos aqui anunciando o nosso casamento. Não foi fácil chegarmos
                                 até aqui, pois enfrentamos muitas dificuldades e pensamos até em desistir. Mas
                                 maior é Aquele que está conosco. Nessa nossa nova jornada, estamos rodeados de
-                                nossos familiares e amigos para o nosso tão sonhado 'sim' no altar, uma promessa
-                                de Deus em nossas vidas."
+                                nossos familiares e amigos para o nosso tão sonhado 'SIM' no altar, uma promessa
+                                de Deus em nossas vidas. Estamos empolgados para começar essa nova fase e gratos
+                                por ter vocês ao nosso lado neste dia especial."
                 />
             </section>
-            <section className={`pb-5 ${style.sectionInfoCasamento}`} i id='infoCasamento'>
+            <section className={`pb-5 ${style.sectionInfoCasamento}`}  id='infoCasamento'>
                 <InfoCasamento/>
             </section>
-            <section className={`pb-5 ${style.confirmarPresenca}`} i id='confirmarPresenca'>
+            <section className={`pb-5 ${style.confirmarPresenca}`}  id='confirmarPresenca'>
                 <ConfirmarPresenca/>
             </section>
            </main>

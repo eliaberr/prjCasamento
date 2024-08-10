@@ -3,18 +3,18 @@ import style from '../nav/Nav.module.css'
 function Nav(){
     return(
         <div>
-            <ul class={` d-none d-sm-flex nav bg-dark ${style.nav}`}>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#home">Home</a>
+            <ul className={` d-none d-sm-flex nav bg-dark ${style.nav}`}>
+                <li className="nav-item">
+                    <a className="nav-link" aria-current="page" href="#home">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#nossaHistoria">Nossa História</a>
+                <li className="nav-item">
+                    <a className="nav-link" href="#nossaHistoria">Nossa História</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#infoCasamento">Informações Casamento</a>
+                <li className="nav-item">
+                    <a className="nav-link" href="#infoCasamento">Informações Casamento</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Confirmar Presença</a>
+                <li className="nav-item">
+                    <a className="nav-link" href="#">Confirmar Presença</a>
                 </li>
             </ul>
         </div>
