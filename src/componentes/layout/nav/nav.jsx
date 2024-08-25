@@ -14,7 +14,7 @@ function Nav(){
                     <a className="nav-link" href="#infoCasamento">Informações Casamento</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Confirmar Presença</a>
+                    <a className="nav-link" href="#confirmarPresenca">Confirmar Presença</a>
                 </li>
             </ul>
         </div>

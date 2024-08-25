@@ -9,7 +9,7 @@ function ConfirmarPresenca() {
     const handleSubmit = (e) => {
         e.preventDefault();
     
-        const phoneNumber = '5511951285687'; // Substitua com seu número
+        const phoneNumber = '5511966382589'; // Subistituir esse numero para o da confirmação
         const formattedMessage = `Olá, meu nome é *${name}*. Quero Confirmar a Minha Presença no Casamento da Laís e Eliabe, sou Convidado ${convidado}`;
         const encodedMessage = encodeURIComponent(formattedMessage);
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
