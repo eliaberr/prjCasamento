@@ -72,6 +72,7 @@ function PageHome(){
                                 por ter vocês ao nosso lado neste dia especial."
                 />
             </section>
+        
             <section className={`pb-5 ${style.sectionInfoCasamento}`}  id='infoCasamento'>
                 <InfoCasamento/>
             </section>
