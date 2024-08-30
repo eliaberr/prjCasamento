@@ -5,10 +5,9 @@ import imgHistoria1 from '../../../img/imgHistoria1.jpg'
 import imgHistoria2 from '../../../img/imgHistoria2.jpg'
 import imgHistoria3 from '../../../img/imgHistoria3.jpg'
 import imgHistoria4 from '../../../img/imgHistoria4.png'
-
 import Contagem from '../../contagem/Contagem'
 import InfoCasamento from '../Info Casamento/InfoCasamento'
-import imgHome from '../../../img/imgInicio.png'
+
 import ConfirmarPresenca from '../Confirmar Presença/ConfirmarPresenca'
 
 
@@ -16,6 +15,8 @@ import ConfirmarPresenca from '../Confirmar Presença/ConfirmarPresenca'
 
 
 function PageHome(){
+    const imgHome = "https://res.cloudinary.com/dlvh3mmp8/image/upload/v1723446955/crovrknjmo7paql1wvhs.png"
+
     return(
         <div id='home'>
            <header className='fixed-top opacity-75' ><Nav/></header>
@@ -71,6 +72,7 @@ function PageHome(){
                                 por ter vocês ao nosso lado neste dia especial."
                 />
             </section>
+        
             <section className={`pb-5 ${style.sectionInfoCasamento}`}  id='infoCasamento'>
                 <InfoCasamento/>
             </section>
