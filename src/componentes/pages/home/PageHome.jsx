@@ -21,7 +21,7 @@ function PageHome(){
            <header className='fixed-top opacity-75' ><Nav/></header>
            <main className='d-grid'>
             <section className={`col-md-12`}>
-                <img src={imgHome} alt="imgHome" className={`col-12  ${style.imgInicio}`}/>
+                <img src={imgHome} alt="imgHome" className={`col-12 ${style.imgInicio}`}/>
             </section>
             <section id='nossaHistoria' className={`${style.sectionNossaHistoria} text-center pb-5`}>
                 <Contagem/>
