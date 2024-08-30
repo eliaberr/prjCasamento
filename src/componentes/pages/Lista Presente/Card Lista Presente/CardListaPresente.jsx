@@ -1,13 +1,15 @@
 import style from './CardListaPresente.module.css'
+import imgPresente from '../../../../img/imgPresente.webp'
+import ModalListaPresente from '../Modal Lista Presente/ModalListaPresente'
 
 function CardListaPresente() {
     return(
-        <div className={`card col-10 offset-1 mb-4 col-sm-3 ${style.cardTamanho}`}>
-            <img src="..." className="card-img-top" alt="..."/>
+        <div className={`card col-10 offset-1 mb-4 offset-sm-0 col-sm-3 ${style.cardTamanho}`}>
+            <img src={imgPresente} className="card-img-top" alt="..."/>
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <h5 className="card-title">Liquidificador</h5>
+                    <p className="card-text">R$ 56,87</p>
+                    <ModalListaPresente/>
             </div>
         </div>
     )
