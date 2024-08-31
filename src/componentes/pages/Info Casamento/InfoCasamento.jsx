@@ -1,4 +1,5 @@
 import { FaLocationDot } from "react-icons/fa6";
+import { FaRoute } from "react-icons/fa";
 import { IoIosGift } from "react-icons/io";
 import { FaWaze } from "react-icons/fa";
 import { FaGifts } from "react-icons/fa";
@@ -15,7 +16,7 @@ function InfoCasamento() {
             
            
             <div className="col-6">
-                <span className="fs-1"><FaLocationDot/></span>
+                <span className="fs-1"><FaRoute/></span>
                 <h1>Bellas festas</h1>
                 <div className="col-sm-6 offset-sm-3">
                     <p>O casamento acontecerá às 17h na Estr. da Servidão, 73 - Ana Maria, Sorocaba - SP, 18052-887.</p>

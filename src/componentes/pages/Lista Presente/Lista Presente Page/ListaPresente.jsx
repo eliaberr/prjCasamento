@@ -1,7 +1,6 @@
 import imgPresente from '../../../../img/imgPresentes.png'
-import Nav from '../../../layout/nav/nav'
-import CardListaPresente from '../Card Lista Presente/CardListaPresente'
 import style from './ListaPresente.module.css'
+import ListarCardPresente from '../Card Lista Presente/Listar Card Presente/ListarCardPresente'
 
 function ListaPresente(){
     return(
@@ -14,10 +13,8 @@ function ListaPresente(){
                     <h1>Lista De Presente</h1>
                     <p>Escolha o prente ideal para os Noivos</p>
                 </section>
-                <section className='d-sm-flex gap-5 justify-content-center mt-5'>
-                <CardListaPresente/>
-                <CardListaPresente/>
-                <CardListaPresente/>
+                <section>
+                    <ListarCardPresente/>
                 </section>
             </main>
        </section>
