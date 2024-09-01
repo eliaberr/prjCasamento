@@ -35,11 +35,7 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
 
     if (id) {
       fetchPresente();
-    }
-
-    
-      
-    
+    } 
   }, [id]);
 
   function statusPresenteEscolhido() {
@@ -105,6 +101,12 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
         )}
       </Modal.Body>
       <Modal.Footer>
+      {presenteEscolhido ? (
+            <Button variant="secondary" onClick={handleClose}>
+            Voltar
+        </Button>
+        ):(<></>)}
+        
         <Button variant="secondary" onClick={handleClose}>
           Fechar
         </Button>
