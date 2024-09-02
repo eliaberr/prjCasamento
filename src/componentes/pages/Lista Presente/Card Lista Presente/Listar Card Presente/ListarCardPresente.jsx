@@ -12,13 +12,11 @@ function ListarCardPresente() {
     useEffect(() =>{
         fetch('http://localhost:3001/presentes').then(
             response => response.json(),
-            console.log('iae man3')
         ).then(data => {
-            console.log('iae man 2');
             setData(data)
             setCarregando(false)
         }).catch(error => {
-            console.log('Erro na Api', error);
+            console.log(error);
             setCarregando(false)
             
         })
@@ -39,6 +37,7 @@ function ListarCardPresente() {
                         urlDaImg={imgPresenteCard}
                         nomeDoPresente={item.nomePresente}
                         preco={item.price.toFixed(2)}
+                        telefone={item.telefoneDoUser}
                     />
                 )
                 )

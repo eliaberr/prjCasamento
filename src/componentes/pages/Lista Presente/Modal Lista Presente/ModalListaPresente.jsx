@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState} from 'react';
 import style from './ModalListaPresente.module.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -13,6 +13,7 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
   const [erro, setErro] = useState(null);
   const [presenteEscolhido, setPresenteEscolhido] = useState(true);
   const [confirmacao, setConfirmacao] = useState(true);
+  const [telefoneUser, settelefoneUser] = useState("")
 
 
 
@@ -40,6 +41,8 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
 
   function salvarNumeroNoPresente() {
     setConfirmacao(false);
+    
+    
   }
 
   return (
@@ -78,7 +81,7 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
                             type="text"
                             className="form-control"
                             placeholder="Digite o número do seu telefone aqui com o DDD"
-                            id='telefone'
+                            onChange={settelefoneUser}
                             required>
                         </InputMask>
                         
@@ -87,7 +90,7 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
                     </div>
                   ) : (
                     <div className='mt-3'>
-                      <span className='fs-1'><ImCheckboxChecked/></span>
+                      <span className='fs-1 text-success'><ImCheckboxChecked/></span>
                       <p className='mt-2'>Presente Confirmado</p>
                     </div>
                   )}
