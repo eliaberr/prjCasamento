@@ -3,8 +3,9 @@ import style from './ModalListaPresente.module.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { ImCheckboxChecked } from "react-icons/im";
-import $ from 'jquery';
-import 'jquery-mask-plugin';
+import InputMask from 'react-input-mask';
+
+
 
 function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
   const [presente, setPresente] = useState(null);
@@ -13,8 +14,7 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
   const [presenteEscolhido, setPresenteEscolhido] = useState(true);
   const [confirmacao, setConfirmacao] = useState(true);
 
-  const telefoneInputRef = useRef(null);
-  $(telefoneInputRef.current).mask('(00) 00000-0000');
+
 
   useEffect(() => {
     const fetchPresente = async () => {
@@ -37,10 +37,6 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
       fetchPresente();
     } 
   }, [id]);
-
-  function statusPresenteEscolhido() {
-    setPresenteEscolhido(false);
-  }
 
   function salvarNumeroNoPresente() {
     setConfirmacao(false);
@@ -67,24 +63,25 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
                 <>
                   <h4>Como Você Quer Presentear?</h4>
                   <div className='d-flex flex-column gap-4 justify-content-center mt-5'>
-                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={statusPresenteEscolhido}>Levar o Presente no Dia</button>
-                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={statusPresenteEscolhido}>Comprar Online</button>
-                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={statusPresenteEscolhido}>Fazer o Pix</button>
+                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(false)}>Levar o Presente no Dia</button>
+                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(false)}>Comprar Online</button>
+                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(false)}>Fazer o Pix</button>
                   </div>
                 </>
-              ) : (
-              
+              ) : (            
                 <div className='mt-4'>
                   {confirmacao ? (
                     <div>
                       <form onSubmit={salvarNumeroNoPresente}>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Digite o número do seu telefone aqui com o DDD"
-                          ref={telefoneInputRef}
-                          required
-                        />
+                        <InputMask
+                            mask="(99) 99999-9999"
+                            type="text"
+                            className="form-control"
+                            placeholder="Digite o número do seu telefone aqui com o DDD"
+                            id='telefone'
+                            required>
+                        </InputMask>
+                        
                         <button className={`col-sm-4 mt-3 ${style.btnEscolha}`}><span></span>Confirmar Presente</button>
                       </form>
                     </div>
@@ -102,11 +99,11 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
       </Modal.Body>
       <Modal.Footer>
       {presenteEscolhido ? (
-            <Button variant="secondary" onClick={handleClose}>
-            Voltar
-        </Button>
-        ):(<></>)}
-        
+            <></>
+        ):( <Button variant="secondary" onClick={() => setPresenteEscolhido(true)}>
+                Voltar
+            </Button>
+        )}
         <Button variant="secondary" onClick={handleClose}>
           Fechar
         </Button>
