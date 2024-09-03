@@ -6,3 +6,10 @@
     border-radius: 4px;
 }
 
+.divPix{
+    border: solid 1px;
+    background-color: rgb(209, 212, 214);
+    height: 4rem;
+    font-size: 0.69rem;
+}
+

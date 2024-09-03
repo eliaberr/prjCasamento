@@ -1,4 +1,4 @@
-import CardListaPresente from "../Card Presente/CardPresente"
+import CardPresente from "../Card Presente/CardPresente"
 import imgPresenteCard from '../../../../../img/imgPresente.webp'
 import { useEffect, useState } from "react"
 
@@ -32,11 +32,11 @@ function ListarCardPresente() {
         <div className='d-sm-flex gap-5 justify-content-center mt-5'>
             {
                 data.map(item => (
-                    <CardListaPresente
+                    <CardPresente
                         id={item.id}
                         urlDaImg={imgPresenteCard}
                         nomeDoPresente={item.nomePresente}
-                        preco={item.price.toFixed(2)}
+                        preco={item.price}
                         telefone={item.telefoneDoUser}
                     />
                 )

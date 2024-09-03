@@ -4,16 +4,17 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { ImCheckboxChecked } from "react-icons/im";
 import InputMask from 'react-input-mask';
-
-
+import { createStaticPix} from 'pix-utils';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
   const [presente, setPresente] = useState(null);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
-  const [presenteEscolhido, setPresenteEscolhido] = useState(true);
+  const [presenteEscolhido, setPresenteEscolhido] = useState(0);
   const [confirmacao, setConfirmacao] = useState(true);
   const [telefoneUser, settelefoneUser] = useState("")
+  const [copiado, setCopiado] = useState(false)
 
 
 
@@ -40,10 +41,39 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
   }, [id]);
 
   function salvarNumeroNoPresente() {
-    setConfirmacao(false);
-    
-    
+    setConfirmacao(false);        
   }
+
+  const salvarNumero = () =>{
+    fetch(`http://localhost:3001/presentes/${id}`, {
+      method: 'PUT',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({
+        telefoneDoUser:telefoneUser
+      }),
+    }).then(response =>{
+      if (!response.ok){
+        throw new Error("Erro ao Atulizar")
+      } return response.json();
+    }).then(data =>{
+      console.log("atualizado", data);
+            
+    });
+  }
+
+  const pix = createStaticPix({
+    merchantName: 'Eliabe Rodrigues',
+    merchantCity: 'Itu',
+    pixKey: 'eliabe859@gmail.com',
+    infoAdicional: `Pix Presnete${nomePresente}`,
+    transactionAmount: preco,
+  });
+  
+  
+  const brCode = pix.toBRCode();
+  
 
   return (
     <Modal show={show} onHide={handleClose}>
@@ -59,16 +89,16 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
           presente && (
             <div className='text-center'>
               <h4>{nomePresente}</h4>
-              <p>Valor: R${preco}</p>
+              <p>Valor: R${preco},00</p>
               <br/>
 
-              {presenteEscolhido ? (
+              {presenteEscolhido === 0 ? (
                 <>
                   <h4>Como Você Quer Presentear?</h4>
                   <div className='d-flex flex-column gap-4 justify-content-center mt-5'>
-                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(false)}>Levar o Presente no Dia</button>
-                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(false)}>Comprar Online</button>
-                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(false)}>Fazer o Pix</button>
+                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(1)}>Levar o Presente no Dia</button>
+                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(2)}>Comprar Online</button>
+                    <button className={`col-sm-6 offset-sm-3 align-content-center ${style.btnEscolha}`} onClick={() => setPresenteEscolhido(3)}>Fazer o Pix</button>
                   </div>
                 </>
               ) : (            
@@ -81,17 +111,53 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
                             type="text"
                             className="form-control"
                             placeholder="Digite o número do seu telefone aqui com o DDD"
-                            onChange={settelefoneUser}
+                            onChange={e => settelefoneUser(e.target.value)}
                             required>
                         </InputMask>
                         
-                        <button className={`col-sm-4 mt-3 ${style.btnEscolha}`}><span></span>Confirmar Presente</button>
+                        <button className={`col-sm-4 mt-3 ${style.btnEscolha}`} onClick={salvarNumero}><span></span>Confirmar Presente</button>
                       </form>
                     </div>
                   ) : (
                     <div className='mt-3'>
-                      <span className='fs-1 text-success'><ImCheckboxChecked/></span>
-                      <p className='mt-2'>Presente Confirmado</p>
+                      <div>
+                        <span className='fs-1 text-success'><ImCheckboxChecked/></span>
+                        <p className='mt-2'>Presente Confirmado, Muito Obrigado</p>
+                      </div>
+                      {presenteEscolhido === 1 ?(
+                        <>
+                          <h2 className='mt-2'>Leve o presente no dia do casamento.</h2>
+                          <p className='mt-4'>Caso deseje trocar o presente ou encontrar uma forma diferente de presentear os noivos, clique em "procurar presente" e faça a troca ou entre em contato diretamente com os noivos para realizar a troca.</p>
+                        </>
+                      ):(presenteEscolhido === 2 ? (
+                        <>
+                        <h2 className='mt-2'>Clique no Botão para compar online.</h2>
+                        <p className='mt-4'>leve no dia do casamento ou Entregue na casa dos noivos</p>
+                          <a href="https://www.magazineluiza.com.br/fritadeira-eletrica-sem-oleo-air-fryer-mondial-family-afn-40-bi-preto-4l-com-timer/p/228887100/ep/efso/?seller_id=magazineluiza&srsltid=AfmBOopB2zs9YpE0tjKEonU-Z85zq1t1Jc4iTjvhazcI6IHWhkhIWebwbDI">
+                            <Button variant="secondary">
+                              Comprar Presente Online
+                            </Button>
+                          </a>
+                        </>
+                      ):(
+                        <>
+                          <h2 className='mt-2'>Faça o Pix para os Noivo.</h2>
+                          <div className='d-grid '>
+                            <div className={`${style.divPix} col-10 offset-1  text-wrap`}>
+                              {brCode}
+                            </div>
+                            <CopyToClipboard className='mt-4' text={brCode} onCopy={() => setCopiado(true) }>
+                              <Button variant="primary col-4 offset-4">
+                                  Copiar Pix
+                              </Button>
+                            </CopyToClipboard>
+                            {copiado === true ?(
+                              <p className=' text-success mt-1' >Pix Copiado!</p>
+                            ):(<></>)}
+                          </div>
+                          
+                        </>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -101,9 +167,9 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
         )}
       </Modal.Body>
       <Modal.Footer>
-      {presenteEscolhido ? (
+      {presenteEscolhido === 0 ? (
             <></>
-        ):( <Button variant="secondary" onClick={() => setPresenteEscolhido(true)}>
+        ):( <Button variant="secondary" onClick={() => setPresenteEscolhido(0)}>
                 Voltar
             </Button>
         )}

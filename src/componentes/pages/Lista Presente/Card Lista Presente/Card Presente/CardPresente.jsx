@@ -3,7 +3,7 @@ import style from './CardPresente.module.css';
 import Button from 'react-bootstrap/Button';
 import ModalListaPresente from '../../Modal Lista Presente/ModalListaPresente';
 
-function CardListaPresente({ urlDaImg, nomeDoPresente, preco, id, telefone }) {
+function CardPresente({ urlDaImg, nomeDoPresente, preco, id, telefone }) {
   const [showModal, setShowModal] = useState(false);
 
   const handleShow = () => setShowModal(true);
@@ -17,17 +17,18 @@ function CardListaPresente({ urlDaImg, nomeDoPresente, preco, id, telefone }) {
       <img src={urlDaImg} className="card-img-top" alt="presente" />
       <div className="card-body">
         <h5 className="card-title">{nomeDoPresente}</h5>
-        <p className="card-text">{preco}</p>
+        <p className="card-text">R$ {preco},00</p>
         {
           telefone === 'null' ? (
-            <Button variant="secondary" >
-              Indisponivel
-            </Button>
-          )
-        :(
             <Button variant="primary" onClick={handleShow}>
               Escolher Presente
             </Button>
+          )
+        :(
+            
+            <Button variant="secondary" >
+            Indisponivel
+          </Button>
         )}
         
       </div>
@@ -43,4 +44,4 @@ function CardListaPresente({ urlDaImg, nomeDoPresente, preco, id, telefone }) {
   );
 }
 
-export default CardListaPresente;
+export default CardPresente;
