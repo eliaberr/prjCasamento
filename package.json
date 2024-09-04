@@ -14,6 +14,7 @@
     "jquery-mask-plugin": "^1.14.16",
     "pix-utils": "^2.6.0",
     "prjcasamento": "file:",
+    "qrcode": "^1.5.4",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-copy-to-clipboard": "^5.1.0",

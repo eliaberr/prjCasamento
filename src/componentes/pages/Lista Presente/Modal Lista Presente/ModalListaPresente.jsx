@@ -5,9 +5,8 @@ import Modal from 'react-bootstrap/Modal';
 import { ImCheckboxChecked } from "react-icons/im";
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import 'react-phone-number-input/style.css'
-import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
-
+import InputMask from 'react-input-mask';
+import QrCodePix from './Qrcode/QrCodePix';
 
 function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg, telefone }) {
   const [presente, setPresente] = useState(null);
@@ -77,12 +76,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
   
   const brCode = pix.toBRCode();
 
-  const validarNumero = (phone) =>{
-    setTelefoneUser(phone);
-    if(phone && isValidPhoneNumber(phone)){
-      setValidacaoDeTelefone(true)
-    }
-  }
+  
 
   return (
     <Modal show={show} onHide={handleClose}>
@@ -117,24 +111,16 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                     <div>
                       <form onSubmit={() => setConfirmacao(false)}>
                         
-                        <PhoneInput
-                          placeholder="Digite o número do seu telefone aqui com o DDD"
-                          value={telefoneUser}
-                          onChange={validarNumero}
-                          defaultCountry="BR"
-                          international={false}
-                          required
-                        />
-                        
-  
-                        {telefoneUser && !isValidPhoneNumber(telefoneUser) && (
-                            <p className=' text-danger mt-1' >Telefone Invalido</p>
-                          )}
-                        
-                        
-                        
-                        
-                        <button className={`col-sm-4 mt-3  ${validacaoDeTelefone ?style.btnEscolha: style.btnDisable}`} onClick={salvarNumero} ><span></span>Confirmar Presente</button>
+                      <InputMask
+                            mask="(99) 99999-9999"
+                            type="text"
+                            className="form-control"
+                            placeholder="Digite o número do seu telefone aqui com o DDD"
+                            onChange={e => setTelefoneUser(e.target.value)}
+                            required>
+                        </InputMask>
+                    
+                        <button className={`col-sm-4 mt-3  ${style.btnEscolha}`} onClick={salvarNumero} ><span></span>Confirmar Presente</button>
                       </form>
                     </div>
                   ) : (
@@ -163,6 +149,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                         <>
                           <h2 className='mt-2'>Faça o Pix para os Noivo.</h2>
                           <div className='d-grid '>
+                            <QrCodePix pix={brCode}></QrCodePix>
                             <div className={`${style.divPix} col-10 offset-1  text-wrap`}>
                               {brCode}
                             </div>
