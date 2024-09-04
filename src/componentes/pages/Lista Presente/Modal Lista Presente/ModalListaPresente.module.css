@@ -13,3 +13,7 @@
     font-size: 0.69rem;
 }
 
+.btnDisable{
+    background-color: rgb(0, 0, 0);
+}
+

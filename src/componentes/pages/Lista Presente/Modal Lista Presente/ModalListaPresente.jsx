@@ -3,9 +3,11 @@ import style from './ModalListaPresente.module.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { ImCheckboxChecked } from "react-icons/im";
-import InputMask from 'react-input-mask';
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import 'react-phone-number-input/style.css'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
+
 
 function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg, telefone }) {
   const [presente, setPresente] = useState(null);
@@ -13,8 +15,9 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
   const [erro, setErro] = useState(null);
   const [presenteEscolhido, setPresenteEscolhido] = useState(0);
   const [confirmacao, setConfirmacao] = useState(true);
-  const [telefoneUser, settelefoneUser] = useState("")
+  const [telefoneUser, setTelefoneUser] = useState("")
   const [copiado, setCopiado] = useState(false)
+  const [validacaoDeTelefone, setValidacaoDeTelefone] = useState(false)
 
 
 
@@ -40,10 +43,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
     } 
   }, [id]);
 
-  function salvarNumeroNoPresente() {
-    setConfirmacao(false);        
-  }
-
+ 
   const salvarNumero = () =>{
     fetch(`http://localhost:3001/presentes/${id}`, {
       method: 'PUT',
@@ -76,7 +76,13 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
   
   
   const brCode = pix.toBRCode();
-  
+
+  const validarNumero = (phone) =>{
+    setTelefoneUser(phone);
+    if(phone && isValidPhoneNumber(phone)){
+      setValidacaoDeTelefone(true)
+    }
+  }
 
   return (
     <Modal show={show} onHide={handleClose}>
@@ -91,6 +97,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
         ) : (
           presente && (
             <div className='text-center'>
+              <img src={urlDaImg} alt={nomeDoPresente} className='w-50' />
               <h4>{nomeDoPresente}</h4>
               <p>Valor: R${preco},00</p>
               <br/>
@@ -108,17 +115,26 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                 <div className='mt-4'>
                   {confirmacao ? (
                     <div>
-                      <form onSubmit={salvarNumeroNoPresente}>
-                        <InputMask
-                            mask="(99) 99999-9999"
-                            type="text"
-                            className="form-control"
-                            placeholder="Digite o número do seu telefone aqui com o DDD"
-                            onChange={e => settelefoneUser(e.target.value)}
-                            required>
-                        </InputMask>
+                      <form onSubmit={() => setConfirmacao(false)}>
                         
-                        <button className={`col-sm-4 mt-3 ${style.btnEscolha}`} onClick={salvarNumero}><span></span>Confirmar Presente</button>
+                        <PhoneInput
+                          placeholder="Digite o número do seu telefone aqui com o DDD"
+                          value={telefoneUser}
+                          onChange={validarNumero}
+                          defaultCountry="BR"
+                          international={false}
+                          required
+                        />
+                        
+  
+                        {telefoneUser && !isValidPhoneNumber(telefoneUser) && (
+                            <p className=' text-danger mt-1' >Telefone Invalido</p>
+                          )}
+                        
+                        
+                        
+                        
+                        <button className={`col-sm-4 mt-3  ${validacaoDeTelefone ?style.btnEscolha: style.btnDisable}`} onClick={salvarNumero} ><span></span>Confirmar Presente</button>
                       </form>
                     </div>
                   ) : (
@@ -136,11 +152,12 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                         <>
                         <h2 className='mt-2'>Clique no Botão para compar online.</h2>
                         <p className='mt-4'>leve no dia do casamento ou Entregue na casa dos noivos</p>
-                          <a href={urlCompra} target='_blank'>
+                          <a href={urlCompra} target='_blank' rel="noreferrer">
                             <Button variant="secondary">
                               Comprar Presente Online
                             </Button>
                           </a>
+                          <p className='mt-4'>Caso deseje trocar o presente ou encontrar uma forma diferente de presentear os noivos, clique em "procurar presente" e faça a troca ou entre em contato diretamente com os noivos para realizar a troca.</p>
                         </>
                       ):(
                         <>
@@ -157,6 +174,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                             {copiado === true ?(
                               <p className=' text-success mt-1' >Pix Copiado!</p>
                             ):(<></>)}
+                            <p className='mt-4'>Caso deseje trocar o presente ou encontrar uma forma diferente de presentear os noivos, clique em "procurar presente" e faça a troca ou entre em contato diretamente com os noivos para realizar a troca.</p>
                           </div>
                           
                         </>
