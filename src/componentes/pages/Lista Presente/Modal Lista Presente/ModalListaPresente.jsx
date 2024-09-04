@@ -7,7 +7,7 @@ import InputMask from 'react-input-mask';
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
+function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg, telefone }) {
   const [presente, setPresente] = useState(null);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
@@ -62,12 +62,15 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
             
     });
   }
+  const recarregarPagina = () =>{
+    window.location.reload();
+  }
 
   const pix = createStaticPix({
     merchantName: 'Eliabe Rodrigues',
     merchantCity: 'Itu',
     pixKey: 'eliabe859@gmail.com',
-    infoAdicional: `Pix Presnete${nomePresente}`,
+    infoAdicional: `Pix Presnete${nomeDoPresente}`,
     transactionAmount: preco,
   });
   
@@ -88,7 +91,7 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
         ) : (
           presente && (
             <div className='text-center'>
-              <h4>{nomePresente}</h4>
+              <h4>{nomeDoPresente}</h4>
               <p>Valor: R${preco},00</p>
               <br/>
 
@@ -133,7 +136,7 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
                         <>
                         <h2 className='mt-2'>Clique no Botão para compar online.</h2>
                         <p className='mt-4'>leve no dia do casamento ou Entregue na casa dos noivos</p>
-                          <a href="https://www.magazineluiza.com.br/fritadeira-eletrica-sem-oleo-air-fryer-mondial-family-afn-40-bi-preto-4l-com-timer/p/228887100/ep/efso/?seller_id=magazineluiza&srsltid=AfmBOopB2zs9YpE0tjKEonU-Z85zq1t1Jc4iTjvhazcI6IHWhkhIWebwbDI">
+                          <a href={urlCompra} target='_blank'>
                             <Button variant="secondary">
                               Comprar Presente Online
                             </Button>
@@ -173,7 +176,7 @@ function ModalListaPresente({ show, handleClose, id, nomePresente, preco }) {
                 Voltar
             </Button>
         )}
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={() => {handleClose(); recarregarPagina()}}>
           Fechar
         </Button>
       </Modal.Footer>

@@ -3,7 +3,7 @@ import style from './CardPresente.module.css';
 import Button from 'react-bootstrap/Button';
 import ModalListaPresente from '../../Modal Lista Presente/ModalListaPresente';
 
-function CardPresente({ urlDaImg, nomeDoPresente, preco, id, telefone }) {
+function CardPresente({ id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg, telefone }) {
   const [showModal, setShowModal] = useState(false);
 
   const handleShow = () => setShowModal(true);
@@ -11,7 +11,7 @@ function CardPresente({ urlDaImg, nomeDoPresente, preco, id, telefone }) {
 
   console.log(telefone);
   
-
+  console.log(urlDaImg);
   return (
     <div className={`card col-10 offset-1 mb-4 offset-sm-0 col-sm-3 ${style.cardTamanho}`}>
       <img src={urlDaImg} className="card-img-top" alt="presente" />
@@ -25,14 +25,13 @@ function CardPresente({ urlDaImg, nomeDoPresente, preco, id, telefone }) {
             </Button>
           )
         :(
-            
             <Button variant="secondary" >
-            Indisponivel
+            Indisponível
           </Button>
         )}
         
       </div>
-      {/* Passando informações do presente e controle da modal */}
+      {/* Passando informações do presente para a modal */}
       <ModalListaPresente
         show={showModal}
         handleClose={handleClose}
@@ -40,6 +39,7 @@ function CardPresente({ urlDaImg, nomeDoPresente, preco, id, telefone }) {
         nomePresente={nomeDoPresente}
         preco={preco}
       />
+      
     </div>
   );
 }

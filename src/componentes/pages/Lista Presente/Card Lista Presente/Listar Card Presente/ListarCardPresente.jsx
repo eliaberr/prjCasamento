@@ -34,9 +34,12 @@ function ListarCardPresente() {
                 data.map(item => (
                     <CardPresente
                         id={item.id}
-                        urlDaImg={imgPresenteCard}
                         nomeDoPresente={item.nomePresente}
+                        corPreferencia={item.corDePreferencia}
                         preco={item.price}
+                        urlCompra={item.link}
+                        formaPagamento={item.entrega}
+                        urlDaImg={item.urlImagem}
                         telefone={item.telefoneDoUser}
                     />
                 )
