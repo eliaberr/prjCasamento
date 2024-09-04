@@ -149,7 +149,6 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                         <>
                           <h2 className='mt-2'>Faça o Pix para os Noivo.</h2>
                           <div className='d-grid '>
-                            <QrCodePix pix={brCode}></QrCodePix>
                             <div className={`${style.divPix} col-10 offset-1  text-wrap`}>
                               {brCode}
                             </div>
