@@ -1,20 +1,13 @@
-import { useEffect } from "react"
-import { useRef } from "react"
-import QRCode from 'qrcode'
+import QRCode from 'react-qr-code'
 
 function QrCodePix({pix}) {
-    const canvasRef = useRef
-
-    useEffect(()=>{
-        QRCode.toCanvas(canvasRef.current, pix, (error) =>{
-            console.log(error);
-        })
-    },[pix])
 
 
     return(
         <div>
-            <canvas ref={canvasRef} id="canvas"></canvas>
+            <QRCode
+                value={pix}
+            />
         </div>
     )
 }

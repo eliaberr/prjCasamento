@@ -6,7 +6,7 @@ import { ImCheckboxChecked } from "react-icons/im";
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import InputMask from 'react-input-mask';
-import QrCodePix from './Qrcode/QrCodePix';
+import QrCodePix from './QrCode/QrCodePix';
 
 function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg, telefone }) {
   const [presente, setPresente] = useState(null);
@@ -149,7 +149,10 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                         <>
                           <h2 className='mt-2'>Faça o Pix para os Noivo.</h2>
                           <div className='d-grid '>
-                            <div className={`${style.divPix} col-10 offset-1  text-wrap`}>
+                            <QrCodePix
+                              pix={brCode}
+                            />
+                            <div className={`${style.divPix} mt-3 col-10 offset-1  text-wrap`}>
                               {brCode}
                             </div>
                             <CopyToClipboard className='mt-4' text={brCode} onCopy={() => setCopiado(true) }>
