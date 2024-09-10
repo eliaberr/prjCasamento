@@ -46,7 +46,7 @@ function ListarCardPresente() {
                                         id={item.id}
                                         nomeDoPresente={item.nomePresente}
                                         corPreferencia={item.corDePreferencia}
-                                        preco={item.price}
+                                        preco={item.valor}
                                         urlCompra={item.link}
                                         formaPagamento={item.entrega}
                                         urlDaImg={item.urlImagem}
