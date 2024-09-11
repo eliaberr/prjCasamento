@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap'
-import imgPixLogo from '../../../../img/imgPixLogo.png'
+import imgPixLogo from '../../../../../img/imgPixLogo.png'
 import style from './PresentePix.module.css'
 import { useState } from 'react'
 import CurrencyInput from 'react-currency-input-field'
@@ -23,24 +23,6 @@ function PresentePix(params) {
                     </Button>
                 </div>
             </div>
-            {fazerPix ?(
-                <div>
-                    <CurrencyInput
-                        id="input-example"
-                        name="input-name"
-                        placeholder="R$ 0,00"
-                        value={pix}
-                        decimalsLimit={2}
-                        decimalSeparator=","
-                        groupSeparator="."
-                        prefix="R$ "
-                    >
-
-                    </CurrencyInput>
-                </div>
-            ):(<></>)
-
-            }
             
         </section>
     )

@@ -1,4 +1,4 @@
-import PresentePix from "../../PresentePix/PresentePix"
+import PresentePix from "../../PresentePix/PresentePix/PresentePix"
 import CardPresente from "../Card Presente/CardPresente"
 import { useEffect, useState } from "react"
 
