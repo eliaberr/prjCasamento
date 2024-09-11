@@ -44,7 +44,7 @@ function ListarCardPresente() {
                                 <div className="col-md-4 d-flex justify-content-center" key={item.id}>
                                     <CardPresente
                                         id={item.id}
-                                        nomeDoPresente={item.nomePresente}
+                                        nomeDoPresente={item.nomeDoPresente}
                                         corPreferencia={item.corDePreferencia}
                                         preco={item.valor}
                                         urlCompra={item.link}

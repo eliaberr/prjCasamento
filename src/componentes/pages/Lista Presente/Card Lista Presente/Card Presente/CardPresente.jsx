@@ -13,8 +13,10 @@ function CardPresente({ id, nomeDoPresente, corPreferencia, preco, urlCompra, fo
   
   console.log(urlDaImg);
   return (
-    <div className={`card col-10 mb-4 ${style.cardTamanho}`}>
-      <img src={urlDaImg} className="card-img-top" alt="presente" />
+    <div className={`card col-10 mb-4 shadow ${style.cardTamanho}`}>
+      <div className="p-4">
+        <img src={urlDaImg} className="card-img-top" alt="presente" />
+      </div>
       <div className="card-body">
         <h5 className="card-title">{nomeDoPresente}</h5>
         <p className="card-text">R$ {preco},00</p>
