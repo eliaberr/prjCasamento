@@ -1,31 +1,43 @@
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import imgPixLogo from '../../../../../img/imgPixLogo.png'
+
 function ModalPresentePix() {
-    return(
-        <section>
-            
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
- </div>
-        </section>
-    )
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Presentear com Pix
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Presenteia Com Um PIX</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className='text-center d-grid col-12'>
+            <img src={imgPixLogo} alt="PIX" className='col-6 offset-3' />
+            <h4 className='mt-5'>Digite o Valor Desejado</h4>
+            <input type="text" className='col-6 offset-3 mt-2' />
+            <Button variant="primary" className='col-4 offset-4 mt-5' onClick={handleClose}>
+              Avançar
+            </Button>
+          </div>
+          
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Fechar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 }
 
-export default ModalPresentePix
+export default ModalPresentePix;

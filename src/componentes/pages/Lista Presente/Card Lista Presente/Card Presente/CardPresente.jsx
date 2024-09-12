@@ -5,7 +5,7 @@ import ModalListaPresente from '../../Modal Lista Presente/ModalListaPresente';
 
 function CardPresente({ id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg, telefone }) {
   const [showModal, setShowModal] = useState(false);
-
+  
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 

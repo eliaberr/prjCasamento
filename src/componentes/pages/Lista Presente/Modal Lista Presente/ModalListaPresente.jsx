@@ -6,7 +6,7 @@ import { ImCheckboxChecked } from "react-icons/im";
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import InputMask from 'react-input-mask';
-import QrCodePix from './Qrcode/QrCodePix';
+import QrCodePix from './QrCode/QrCodePix';
 
 function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg, telefone }) {
   const [presente, setPresente] = useState(null);
@@ -16,7 +16,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
   const [confirmacao, setConfirmacao] = useState(true);
   const [telefoneUser, setTelefoneUser] = useState("")
   const [copiado, setCopiado] = useState(false)
-  const [validacaoDeTelefone, setValidacaoDeTelefone] = useState(false)
+ 
 
 
 
