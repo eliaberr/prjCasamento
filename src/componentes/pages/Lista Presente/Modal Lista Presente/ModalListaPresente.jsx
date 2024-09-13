@@ -5,8 +5,9 @@ import Modal from 'react-bootstrap/Modal';
 import { ImCheckboxChecked } from "react-icons/im";
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import QrCodePix from './Qrcode/QrCodePix';
 import InputMask from 'react-input-mask';
-import QrCodePix from './QrCode/QrCodePix';
+
 
 function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg, telefone }) {
   const [presente, setPresente] = useState(null);
