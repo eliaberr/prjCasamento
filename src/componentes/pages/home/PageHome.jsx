@@ -1,12 +1,9 @@
 import Nav from '../../layout/nav/nav'
 import style from '../home/PageHome.module.css'
 import NossaHistoria from '../nossa Historia/NossaHistoria'
-import imgHistoria1 from '../../../img/imgHistoria1.jpg'
-import imgHistoria2 from '../../../img/imgHistoria2.jpg'
-import imgHistoria3 from '../../../img/imgHistoria3.jpg'
-import imgHistoria4 from '../../../img/imgHistoria4.png'
 import Contagem from '../../contagem/Contagem'
 import InfoCasamento from '../Info Casamento/InfoCasamento'
+
 
 import ConfirmarPresenca from '../Confirmar Presença/ConfirmarPresenca'
 
@@ -15,7 +12,11 @@ import ConfirmarPresenca from '../Confirmar Presença/ConfirmarPresenca'
 
 
 function PageHome(){
-    const imgHome = "https://res.cloudinary.com/dlvh3mmp8/image/upload/v1723446955/crovrknjmo7paql1wvhs.png"
+    const imgHome = "https://i.imgur.com/XGPX7Io.png"
+    const imgHistoria1 = 'https://i.imgur.com/A6CmBpY.jpeg'
+    const imgHistoria2 = 'https://i.imgur.com/vNYXXcp.jpeg'
+    const imgHistoria3 = 'https://i.imgur.com/Spu2uoG.jpeg'
+    const imgHistoria4 = 'https://i.imgur.com/B9KpNiN.png'
 
     return(
         <div id='home'>

@@ -25,7 +25,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
     const fetchPresente = async () => {
       try {
         setCarregando(true);
-        const response = await fetch(`http://localhost:3001/presentes/${id}`);
+        const response = await fetch(`https://eliabe.discloud.app/presentes/${id}`);
         if (!response.ok) {
           throw new Error('Presente não encontrado');
         }
@@ -45,7 +45,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
 
  
   const salvarNumero = () =>{
-    fetch(`http://localhost:3001/presentes/${id}`, {
+    fetch(`https://eliabe.discloud.app/presentes/${id}`, {
       method: 'PUT',
       headers:{
         'Content-Type':'application/json'

@@ -22,7 +22,7 @@ function ModalPresentePix() {
 
 
   const salvarNumero = () =>{
-    fetch(`http://localhost:3001/pixpresente`, {
+    fetch(`https://181.215.253.124:30120/pixpresente`, {
       method: 'POST',
       headers:{
         'Content-Type':'application/json'

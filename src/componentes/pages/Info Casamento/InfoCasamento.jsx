@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 
 function InfoCasamento() {
-    const maps = "https://www.google.com.br/maps/dir//Bellas+festas+%26+eventos,+Estr.+da+Servid%C3%A3o,+73+-+Ana+Maria,+Sorocaba+-+SP,+18052-887/@-23.5785477,-47.5883307,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94c589f75b6482b7:0xbe98eb18ed85040b!2m2!1d-47.505926!2d-23.5785661?entry=ttu _blank"
-    const waze = "https://waze.com/ul/h6gy1ygwcq"
+    const maps = "httpss://www.google.com.br/maps/dir//Bellas+festas+%26+eventos,+Estr.+da+Servid%C3%A3o,+73+-+Ana+Maria,+Sorocaba+-+SP,+18052-887/@-23.5785477,-47.5883307,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94c589f75b6482b7:0xbe98eb18ed85040b!2m2!1d-47.505926!2d-23.5785661?entry=ttu _blank"
+    const waze = "httpss://waze.com/ul/h6gy1ygwcq"
 
     return (
         <div className={`d-sm-flex col-sm-8 offset-sm-2 rounded-5 shadow text-center p-3 ${style.boxLocalizacao}`}>

@@ -10,7 +10,7 @@ function ListarCardPresente() {
     const [carregando, setCarregando] = useState(true)
 
     useEffect(() =>{
-        fetch('http://localhost:3001/presentes').then(
+        fetch('https://eliabe.discloud.app/presentes').then(
             response => response.json(),
         ).then(data => {
             setData(data)
@@ -20,7 +20,7 @@ function ListarCardPresente() {
             setCarregando(false)
             
         })
-    },[])
+    },[]) 
 
     if (carregando) {
         return <p>Carregando...</p>
