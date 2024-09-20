@@ -27,22 +27,19 @@ function CardPresente({ id, nomeDoPresente, corPreferencia, preco, urlCompra, fo
     fetchData();
   }, [fetchData]);
 
-  // Função chamada quando o botão é clicado
   const handleClick = async () => {
     if (disponivel) {
-      // Verifica novamente a disponibilidade ao clicar no botão
       try {
         const response = await fetch(`https://eliabe.discloud.app/presentes/${id}`);
         const result = await response.json();
         if (result.telefoneDoUser === "null") {
-          // Se ainda estiver disponível, abre a modal e atualiza a disponibilidade
           handleShow();
           await fetch(`https://eliabe.discloud.app/presentes/${id}/escolher`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ telefoneDoUser: 'novoTelefone' }) // Atualiza o telefone na API
+            body: JSON.stringify({ telefoneDoUser: 'novoTelefone' }) 
           });
-          setDisponivel(false); // Atualiza o estado local para refletir a indisponibilidade
+          setDisponivel(false);
         } else {
           setDisponivel(false);
         }

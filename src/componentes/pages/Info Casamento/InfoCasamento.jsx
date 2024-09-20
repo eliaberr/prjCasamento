@@ -8,14 +8,12 @@ import { Link } from "react-router-dom";
 
 
 function InfoCasamento() {
-    const maps = "httpss://www.google.com.br/maps/dir//Bellas+festas+%26+eventos,+Estr.+da+Servid%C3%A3o,+73+-+Ana+Maria,+Sorocaba+-+SP,+18052-887/@-23.5785477,-47.5883307,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94c589f75b6482b7:0xbe98eb18ed85040b!2m2!1d-47.505926!2d-23.5785661?entry=ttu _blank"
-    const waze = "httpss://waze.com/ul/h6gy1ygwcq"
+    const maps = "https://maps.app.goo.gl/xwWZxDCvNfR8nR5r6"
+    const waze = "https://ul.waze.com/ul?place=ChIJt4JkW_eJxZQRCwSF7RjrmL4&ll=-23.57856940%2C-47.50592800&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
 
     return (
         <div className={`d-sm-flex col-sm-8 offset-sm-2 rounded-5 shadow text-center p-3 ${style.boxLocalizacao}`}>
-            
-           
-            <div className="col-6">
+            <div className="col-12 col-md-6">
                 <span className="fs-1"><FaRoute/></span>
                 <h1>Bellas festas</h1>
                 <div className="col-sm-6 offset-sm-3">
@@ -31,7 +29,7 @@ function InfoCasamento() {
                     </a>
                 </div>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6 mt-md-0 mt-5">
                 <span className="fs-1"><FaGifts/></span>
                 <h1>Lista De Presente</h1>
                 <div className="col-sm-8 offset-sm-2">

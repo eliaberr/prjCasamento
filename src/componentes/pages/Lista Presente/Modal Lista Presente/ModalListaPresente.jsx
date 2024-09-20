@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { ImCheckboxChecked } from "react-icons/im";
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import QrCodePix from './Qrcode/QrCodePix';
+import QrCodePix from './QrCode/QrCodePix';
 import InputMask from 'react-input-mask';
 
 
@@ -51,7 +51,8 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
         'Content-Type':'application/json'
       },
       body: JSON.stringify({
-        telefoneDoUser:telefoneUser
+        telefoneDoUser:telefoneUser,
+        tipoDeEntrega:presenteEscolhido
       }),
     }).then(response =>{
       if (!response.ok){
@@ -184,7 +185,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                 Voltar
             </Button>
         )}
-        <Button variant="secondary" onClick={() => {handleClose(); recarregarPagina()}}>
+        <Button variant="secondary" onClick={() => {handleClose()}}>
           Fechar
         </Button>
       </Modal.Footer>

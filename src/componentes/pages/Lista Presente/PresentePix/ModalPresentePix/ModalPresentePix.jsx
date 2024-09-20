@@ -5,7 +5,7 @@ import imgPixLogo from '../../../../../img/imgPixLogo.png'
 import InputMask from 'react-input-mask';
 import { NumericFormat } from 'react-number-format';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import QrCodePix from '../../Modal Lista Presente/Qrcode/QrCodePix';
+import QrCodePix from '../../Modal Lista Presente/QrCode/QrCodePix';
 import { createStaticPix} from 'pix-utils';
 import style from './ModalPresentePix.module.css'
 
@@ -22,7 +22,7 @@ function ModalPresentePix() {
 
 
   const salvarNumero = () =>{
-    fetch(`https://181.215.253.124:30120/pixpresente`, {
+    fetch(`https://eliabe.discloud.app/pixpresente`, {
       method: 'POST',
       headers:{
         'Content-Type':'application/json'
@@ -63,26 +63,24 @@ function ModalPresentePix() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Presenteia Com Um PIX</Modal.Title>
+          <Modal.Title>Presenteie com um PIX</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className='text-center d-grid col-12'>
             <img src={imgPixLogo} alt="PIX" className='col-6 offset-3' />
-            
+          
+            {digitarValor ? (<div className='mt-1'>
+                                <h4 className='mt-5'>Digite o Valor Desejado</h4>
+                        
+                                <NumericFormat
+                                  value={value}
+                                  onChange={e => setValue(e.target.value)}
+                                />
 
-            {digitarValor ? (<div className='mt-5'>
-                      <h4 className='mt-5'>Digite o Valor Desejado</h4>
-              
-                      <NumericFormat
-                        value={value}
-                        onChange={e => setValue(e.target.value)}
-                      />
-
-                      
-                      <Button variant="primary" className='col-4 offset-4 mt-5' onClick={() => setDigitarValor(false)} >
-                        Avançar
-                      </Button>
-                    </div>
+                                <Button variant="primary" className='col-4 offset-4 mt-5' onClick={() => setDigitarValor(false)} >
+                                  Avançar
+                                </Button>
+                              </div>
                   ) :(<>
                   {confirmacao ? (
                     <div className='mt-5'>
@@ -97,12 +95,13 @@ function ModalPresentePix() {
                             required>
                         </InputMask>
                     
-                        <button className={`col-sm-4 mt-3  `} onClick={salvarNumero} ><span></span>Confirmar Presente</button>
+                        <button className={`col-sm-4 mt-3 ${style.btnEscolha}  `} onClick={salvarNumero} ><span></span>Confirmar Presente</button>
                       </form>
                     </div>
                   ):(
                     <>
                           <h2 className='mt-2'>Faça o Pix para os Noivo.</h2>
+                          <p>Valor do Pix R${value},00</p>
                           <div className='d-grid '>
                             <QrCodePix
                               pix={brCode}
