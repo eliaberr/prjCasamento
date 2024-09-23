@@ -1,11 +1,11 @@
 import React, { useEffect, useState} from 'react';
 import style from './ModalListaPresente.module.css';
-import Button from 'react-bootstrap/Button';
+import button from 'react-bootstrap/button';
 import Modal from 'react-bootstrap/Modal';
 import { ImCheckboxChecked } from "react-icons/im";
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import QrCodePix from './QrCode/QrCodePix';
+import QrCodePix from './Qrcode/QrCodePix';
 import InputMask from 'react-input-mask';
 
 
@@ -63,10 +63,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
             
     });
   }
-  const recarregarPagina = () =>{
-    window.location.reload();
-  }
-
+  
   const pix = createStaticPix({
     merchantName: 'Eliabe Rodrigues',
     merchantCity: 'Itu',
@@ -82,7 +79,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
 
   return (
     <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
+      <Modal.Header closebutton>
         <Modal.Title>Informações do Presente</Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -141,9 +138,9 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                         <h2 className='mt-2'>Clique no Botão para compar online.</h2>
                         <p className='mt-4'>leve no dia do casamento ou Entregue na casa dos noivos</p>
                           <a href={urlCompra} target='_blank' rel="noreferrer">
-                            <Button variant="secondary">
+                            <button variant="secondary">
                               Comprar Presente Online
-                            </Button>
+                            </button>
                           </a>
                           <p className='mt-4'>Caso deseje trocar o presente ou encontrar uma forma diferente de presentear os noivos, clique em "procurar presente" e faça a troca ou entre em contato diretamente com os noivos para realizar a troca.</p>
                         </>
@@ -158,9 +155,9 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                               {brCode}
                             </div>
                             <CopyToClipboard className='mt-4' text={brCode} onCopy={() => setCopiado(true) }>
-                              <Button variant="primary col-4 offset-4">
+                              <button variant="primary col-4 offset-4">
                                   Copiar Pix
-                              </Button>
+                              </button>
                             </CopyToClipboard>
                             {copiado === true ?(
                               <p className=' text-success mt-1' >Pix Copiado!</p>
@@ -181,13 +178,13 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
       <Modal.Footer>
       {presenteEscolhido === 0 ? (
             <></>
-        ):( <Button variant="secondary" onClick={() => setPresenteEscolhido(0)}>
+        ):( <button variant="secondary" onClick={() => setPresenteEscolhido(0)}>
                 Voltar
-            </Button>
+            </button>
         )}
-        <Button variant="secondary" onClick={() => {handleClose()}}>
+        <button variant="secondary" onClick={() => {handleClose()}}>
           Fechar
-        </Button>
+        </button>
       </Modal.Footer>
     </Modal>
   );

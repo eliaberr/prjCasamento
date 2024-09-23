@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from './CardPresente.module.css';
-import Button from 'react-bootstrap/Button';
+import button from 'react-bootstrap/button';
 import ModalListaPresente from '../../Modal Lista Presente/ModalListaPresente';
 
 function CardPresente({ id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg }) {
@@ -59,12 +59,19 @@ function CardPresente({ id, nomeDoPresente, corPreferencia, preco, urlCompra, fo
       <div className="card-body">
         <h5 className="card-title">{nomeDoPresente}</h5>
         <p className="card-text">R$ {preco},00</p>
-        <Button 
-          variant={disponivel ? "primary" : "secondary"} 
-          onClick={handleClick}
-        >
-          {disponivel ? "Escolher Presente" : "Indisponível"}
-        </Button>
+
+        {
+          disponivel ? (
+            <button className={`${style.btnEscolha} col-6`}  onClick={handleClick}>
+              Escolher Presente
+            </button>
+          ):( 
+              <button className={`${style.btnIndisponivel} col-6`} onClick={handleClick}>
+                Indisponível
+              </button>
+            )
+        }
+      
       </div>
       <ModalListaPresente
         show={showModal}

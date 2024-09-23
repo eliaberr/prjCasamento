@@ -1,0 +1,19 @@
+.btnEscolha{
+    background-color: #F5E8D0;
+    color: #8B4513;
+    border: solid 1px;
+    border-radius: 4px;
+}
+
+.btnEscolha:hover{
+    background-color:#8B4513 ;
+    color:#F5E8D0 ;
+}
+
+.btnIndisponivel{
+    background-color: #4b4b4b;
+    color: #ffffff;
+    border: solid 1px;
+    border-radius: 4px;
+}
+

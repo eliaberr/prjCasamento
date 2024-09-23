@@ -1,9 +1,7 @@
 import imgPresente from '../../../../img/imgPresentes.png'
 import style from './ListaPresente.module.css'
 import ListarCardPresente from '../Card Lista Presente/Listar Card Presente/ListarCardPresente'
-import Nav from '../../../layout/nav/nav'
-import { Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+
 
 function ListaPresente(){
     return(

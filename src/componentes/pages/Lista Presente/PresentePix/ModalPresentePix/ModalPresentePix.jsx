@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import button from 'react-bootstrap/button';
 import Modal from 'react-bootstrap/Modal';
 import imgPixLogo from '../../../../../img/imgPixLogo.png'
 import InputMask from 'react-input-mask';
 import { NumericFormat } from 'react-number-format';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import QrCodePix from '../../Modal Lista Presente/QrCode/QrCodePix';
+import QrCodePix from '../../Modal Lista Presente/Qrcode/QrCodePix';
 import { createStaticPix} from 'pix-utils';
 import style from './ModalPresentePix.module.css'
 
@@ -57,12 +57,12 @@ function ModalPresentePix() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <button className={style.btnEscolha} onClick={handleShow}>
         Presentear com Pix
-      </Button>
+      </button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header closebutton>
           <Modal.Title>Presenteie com um PIX</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -77,9 +77,9 @@ function ModalPresentePix() {
                                   onChange={e => setValue(e.target.value)}
                                 />
 
-                                <Button variant="primary" className='col-4 offset-4 mt-5' onClick={() => setDigitarValor(false)} >
+                                <button  className={`col-4 offset-4 mt-5 ${style.btnEscolha}`} onClick={() => setDigitarValor(false)} >
                                   Avançar
-                                </Button>
+                                </button>
                               </div>
                   ) :(<>
                   {confirmacao ? (
@@ -109,10 +109,10 @@ function ModalPresentePix() {
                             <div className={`${style.divPix} mt-3 col-10 offset-1  text-wrap`}>
                               {brCode}
                             </div>
-                            <CopyToClipboard className='mt-4' text={brCode} onCopy={() => setCopiado(true) }>
-                              <Button variant="primary col-4 offset-4">
-                                  Copiar Pix
-                              </Button>
+                            <CopyToClipboard className={`mt-4 col-4 offset-4 `} text={brCode} onCopy={() => setCopiado(true) }>
+                              <button className={style.btnEscolha}>
+                                  
+                              </button>
                             </CopyToClipboard>
                             {copiado === true ?(
                               <p className=' text-success mt-1' >Pix Copiado!</p>
@@ -129,9 +129,9 @@ function ModalPresentePix() {
           
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <button variant="secondary" onClick={handleClose}>
             Fechar
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
     </>
