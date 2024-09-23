@@ -11,8 +11,8 @@ function ListaPresente(){
             </header>
             <main className='container mt-3'>
                 <section>
-                    <h1>Lista De Presente</h1>
-                    <p>Escolha o prente ideal para os Noivos</p>
+                    <h1>Lista De Presentes</h1>
+                    <p>Escolha o presente ideal para os Noivos</p>
                 </section>
                 <section>
                     <ListarCardPresente/>

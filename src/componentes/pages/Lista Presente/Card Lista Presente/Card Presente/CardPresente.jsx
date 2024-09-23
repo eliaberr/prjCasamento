@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import style from './CardPresente.module.css';
-import button from 'react-bootstrap/button';
 import ModalListaPresente from '../../Modal Lista Presente/ModalListaPresente';
 
 function CardPresente({ id, nomeDoPresente, corPreferencia, preco, urlCompra, formaPagamento, urlDaImg }) {
@@ -67,7 +66,7 @@ function CardPresente({ id, nomeDoPresente, corPreferencia, preco, urlCompra, fo
             </button>
           ):( 
               <button className={`${style.btnIndisponivel} col-6`} onClick={handleClick}>
-                Indisponível
+                Presente Indisponível
               </button>
             )
         }

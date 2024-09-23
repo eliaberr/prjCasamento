@@ -1,11 +1,11 @@
 import React, { useEffect, useState} from 'react';
 import style from './ModalListaPresente.module.css';
-import button from 'react-bootstrap/button';
+import Button from 'react-bootstrap/button';
 import Modal from 'react-bootstrap/Modal';
 import { ImCheckboxChecked } from "react-icons/im";
 import { createStaticPix} from 'pix-utils';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import QrCodePix from './Qrcode/QrCodePix';
+import QrCodePix from './QrCode/QrCodePix';
 import InputMask from 'react-input-mask';
 
 
@@ -68,7 +68,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
     merchantName: 'Eliabe Rodrigues',
     merchantCity: 'Itu',
     pixKey: 'eliabe859@gmail.com',
-    infoAdicional: `Pix Presnete${nomeDoPresente}`,
+    infoAdicional: `Pix Presente ${nomeDoPresente}`,
     transactionAmount: preco,
   });
   
@@ -138,7 +138,7 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                         <h2 className='mt-2'>Clique no Botão para compar online.</h2>
                         <p className='mt-4'>leve no dia do casamento ou Entregue na casa dos noivos</p>
                           <a href={urlCompra} target='_blank' rel="noreferrer">
-                            <button variant="secondary">
+                            <button className={`mt-1 col-6 ${style.btnEscolha}`}>
                               Comprar Presente Online
                             </button>
                           </a>
@@ -154,8 +154,8 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
                             <div className={`${style.divPix} mt-3 col-10 offset-1  text-wrap`}>
                               {brCode}
                             </div>
-                            <CopyToClipboard className='mt-4' text={brCode} onCopy={() => setCopiado(true) }>
-                              <button variant="primary col-4 offset-4">
+                            <CopyToClipboard className={`mt-4 col-4 offset-4 ${style.btnEscolha}`} text={brCode} onCopy={() => setCopiado(true) }>
+                              <button >
                                   Copiar Pix
                               </button>
                             </CopyToClipboard>
@@ -178,13 +178,13 @@ function ModalListaPresente({ show, handleClose, id, nomeDoPresente, corPreferen
       <Modal.Footer>
       {presenteEscolhido === 0 ? (
             <></>
-        ):( <button variant="secondary" onClick={() => setPresenteEscolhido(0)}>
+        ):( <Button variant="primary" onClick={() => setPresenteEscolhido(0)}>
                 Voltar
-            </button>
+            </Button>
         )}
-        <button variant="secondary" onClick={() => {handleClose()}}>
+        <Button variant="danger" onClick={() => {handleClose()}}>
           Fechar
-        </button>
+        </Button>
       </Modal.Footer>
     </Modal>
   );

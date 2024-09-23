@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import button from 'react-bootstrap/button';
+import Button from 'react-bootstrap/button';
 import Modal from 'react-bootstrap/Modal';
 import imgPixLogo from '../../../../../img/imgPixLogo.png'
 import InputMask from 'react-input-mask';
 import { NumericFormat } from 'react-number-format';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import QrCodePix from '../../Modal Lista Presente/Qrcode/QrCodePix';
+import QrCodePix from '../../Modal Lista Presente/QrCode/QrCodePix';
 import { createStaticPix} from 'pix-utils';
 import style from './ModalPresentePix.module.css'
 
@@ -129,9 +129,9 @@ function ModalPresentePix() {
           
         </Modal.Body>
         <Modal.Footer>
-          <button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
             Fechar
-          </button>
+          </Button>
         </Modal.Footer>
       </Modal>
     </>

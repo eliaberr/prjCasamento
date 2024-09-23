@@ -10,7 +10,7 @@ function PresentePix() {
                     <img src={imgPixLogo} className="w-75"  alt="imgPixLogo"/>
                 </div>
                 <div className="col-12 col-md-8">
-                    <h3 className={`${style.txtPresentePix} col-12 col-md-8 offset-md-2 mb-3`}>Presentei os Noivos com Um PIX 😍</h3>
+                    <h3 className={`${style.txtPresentePix} col-12 col-md-8 offset-md-2 mb-3`}>Presenteie os noivos com um PIX 😍</h3>
                     <ModalPresentePix/>  
                 </div>
             </div>
